@@ -1,10 +1,12 @@
 package com.getfit.mycontact
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.getfit.mycontact.databinding.ContactListIteamBinding
 import com.squareup.picasso.Picasso as Picasso1
@@ -29,7 +31,20 @@ RecyclerView.Adapter<contactViewHolder>() {
             .centerCrop()
             .placeholder(R.drawable.ic_baseline_person_24)
             .into(holder.binding.imgcontact)
+        val context=holder.itemView.context
+          holder.binding.imgcontact.setOnClickListener{
+              Toast.makeText(context,"You have clicked",Toast.LENGTH_LONG)
+                  .show()
+          }
+        holder.binding.cvadapter.setOnClickListener{
+            val intent=Intent(context,ContactDisplayActivity::class.java)
+            intent.putExtra("Name",currentcontact.name)
+            intent.putExtra("Call",currentcontact.phonenumber)
+            intent.putExtra("Video",currentcontact.Email)
+            intent.putExtra("Massages",currentcontact.image)
 
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
