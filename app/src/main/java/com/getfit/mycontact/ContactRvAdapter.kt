@@ -14,9 +14,8 @@ import com.squareup.picasso.Picasso as Picasso1
 class ContactRvAdapter (var contactlist:List<Contact>):
 RecyclerView.Adapter<contactViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): contactViewHolder {
-        var itemView=LayoutInflater.from((parent.context))
-            .inflate(R.layout.contact_list_iteam,parent,false)
-          val binding= ContactListIteamBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        var binding=ContactListIteamBinding
+            .inflate(LayoutInflater.from(parent.context),parent,false)
         return contactViewHolder(binding)
     }
 
@@ -26,8 +25,10 @@ RecyclerView.Adapter<contactViewHolder>() {
         holder.binding.tvnumber.text=currentcontact.phonenumber
         holder.binding.tvEmail.text=currentcontact.Email
         holder.binding.tvAdress.text=currentcontact.Adress
-        Picasso1.get().load(currentcontact.image)
-            .resize(300,400)
+        Picasso1.get()
+            .load(currentcontact.image)
+
+            .resize(200,200)
             .centerCrop()
             .placeholder(R.drawable.ic_baseline_person_24)
             .into(holder.binding.imgcontact)
@@ -39,9 +40,9 @@ RecyclerView.Adapter<contactViewHolder>() {
         holder.binding.cvadapter.setOnClickListener{
             val intent=Intent(context,ContactDisplayActivity::class.java)
             intent.putExtra("Name",currentcontact.name)
-            intent.putExtra("Call",currentcontact.phonenumber)
-            intent.putExtra("Video",currentcontact.Email)
-            intent.putExtra("Massages",currentcontact.image)
+            intent.putExtra("Email",currentcontact.phonenumber)
+            intent.putExtra("ADDRESS",currentcontact.Email)
+            intent.putExtra("image",currentcontact.image)
 
             context.startActivity(intent)
         }

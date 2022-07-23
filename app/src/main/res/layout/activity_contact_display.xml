@@ -12,24 +12,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="396dp"
+        android:layout_marginBottom="316dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgperson"
         android:layout_width="96dp"
         android:layout_height="83dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_bias="0.163"
         app:srcCompat="@drawable/ic_baseline_person_24" />
 
     <ImageView
@@ -64,9 +64,9 @@
 
     <TextView
         android:id="@+id/tvCall"
-        android:layout_width="39dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="67dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
         android:text="Call"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvMessage"
@@ -88,12 +88,23 @@
 
     <TextView
         android:id="@+id/tvvideo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="114dp"
+        android:layout_height="72dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:text="Video"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/tvName1"
+        android:layout_width="103dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgperson" />
 </androidx.constraintlayout.widget.ConstraintLayout>

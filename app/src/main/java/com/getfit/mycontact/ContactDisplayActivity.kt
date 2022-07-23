@@ -12,29 +12,27 @@ class ContactDisplayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityContactDisplayBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_contact_display)
+        setContentView(binding.root)
         getExtra()
     }
     fun getExtra(){
-        var name=intent.extras?.getString("Name")
-        var adress=intent.extras?.getString("Adres")
-        var video=intent.extras?.getString("Video")
-        var massages  = intent.extras?.getString("Massages")
-        var call  = intent.extras?.getString("call")
+        var name=intent.extras?.getString("NAME")
+        var Adress=intent.extras?.getString("ADDRESS")
+        var Email=intent.extras?.getString("Email")
+//        var call  = intent.extras?.getString("CALL")
+//        var image=intent.extras?.getString("IMAGE")
         Toast.makeText(this,name,Toast.LENGTH_LONG).show()
-       Toast.makeText(this, massages,Toast.LENGTH_SHORT).show()
-        Toast.makeText(this, call,Toast.LENGTH_SHORT).show()
-        Toast.makeText(this, video,Toast.LENGTH_SHORT).show()
-        Toast.makeText(this, adress,Toast.LENGTH_SHORT).show()
+
 
 
 
         binding.tvCall.text = name
-        binding.tvMessage.text = massages
-        binding.tvvideo.text = video
-        Picasso.get().load(intent.getStringExtra("IMAGE"))
+        binding.tvMessage.text =Email
+        binding.tvvideo.text = Adress
+        binding.tvName1.text=name
+        Picasso.get().load(intent.getStringExtra("image"))
             .resize(200, 200)
-            .centerCrop()
+            .centerCrop().into(binding.imgperson)
 
 
     }
